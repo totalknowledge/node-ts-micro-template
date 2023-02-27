@@ -10,7 +10,6 @@ export class AppService {
     private collectionRepository: Repository<Ticket>,
   ) { }
 
-  // GET http://localhost:3000/ticket
   async findAll(): Promise<Ticket[]> {
     return await this.collectionRepository.find();
   }
@@ -20,7 +19,6 @@ export class AppService {
   }
 
   async create(record: Ticket): Promise<Ticket> {
-    console.log(record);
     return await this.collectionRepository.save(record);
   }
 

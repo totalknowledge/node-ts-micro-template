@@ -1,0 +1,29 @@
+# This file is for use with the REST Client extention for vs code by Huachao Mao
+GET http://localhost:3000/ticket
+
+###
+
+GET http://localhost:3000/ticket/1
+
+###
+
+DELETE http://localhost:3000/ticket/8
+
+###
+
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+    "ticket":"some ticket name",
+    "description": "some description for the ticket"
+}
+
+###
+
+PUT http://localhost:3000/ticket/1
+Content-Type: application/json
+
+{
+    "description": "altered description"
+}

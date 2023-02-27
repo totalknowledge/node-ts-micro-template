@@ -8,11 +8,22 @@ export class AppController {
     private collectionRepository: AppService,
   ) { }
 
+  /**
+  * findAll returns all of the collection.
+  * http://<url>/ticket
+  * @returns {Array<Ticket>} Returns an array with all records.
+  */
   @Get()
   async findAll(): Promise<Ticket[]> {
     return await this.collectionRepository.findAll();
   }
 
+  /**
+  * findOne returns one record from the collection.
+  * http://<url>/ticket/:id
+  * @param {number} id to match record.
+  * @returns {Array<Ticket>} Returns singular record with id=id.
+  */
   @Get(':id')
   async findOne(@Param('id') id: number): Promise<Ticket> {
     return await this.collectionRepository.findOne(id);
