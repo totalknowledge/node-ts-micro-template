@@ -3,7 +3,7 @@ FROM node:lts-alpine AS builder
 # Set working directory
 WORKDIR /node-ts-micro-template
 # Install app dependencies
-COPY /service .
+COPY . .
 RUN npm i --silent --production && npm i @nestjs/cli -g
 # Build dist
 RUN npm run build
